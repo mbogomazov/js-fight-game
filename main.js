@@ -65,8 +65,10 @@ function changeHP (playerObj) {
     playerObj.hp = playerObj.hp - randomValue > 0 ? playerObj.hp - randomValue : 0;
     $playerLife.style.width = `${playerObj.hp}%`;
 
+    let players = [playerFirst, playerSecond];
+
     if(playerObj.hp === 0) {
-        $arenas.appendChild(playerWin(playerObj.name));
+        $arenas.appendChild(playerWin(players[2 - playerObj.player].name));
         $randomButton.disabled = true;
     }
 }
